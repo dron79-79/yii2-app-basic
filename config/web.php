@@ -2,6 +2,7 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+$cookieValidationKey = require  __DIR__. '/web-local.php';
 
 $config = [
     'id' => 'basic',
@@ -14,7 +15,7 @@ $config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '',
+            'cookieValidationKey' => $cookieValidationKey,
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
